@@ -20,6 +20,9 @@ import { storageManager, sessionStore, insightsStore, preferencesStore } from '.
 import { moodTracker, ambientDetector, patternDetector, insightGenerator } from './ai/index.js';
 import { sessionManager } from './core/SessionManager.js';
 
+// Import utilities
+import { initPerformanceMonitoring } from './utils/performance.js';
+
 // Import global styles
 import './styles/design-tokens.css';
 import './styles/global.css';
@@ -594,6 +597,9 @@ class AwakeningBellApp {
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize performance monitoring
+  initPerformanceMonitoring();
+  
   const app = new AwakeningBellApp();
   app.init();
   
