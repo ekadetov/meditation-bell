@@ -1,0 +1,49 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#2C5F7C"/>
+  
+  <!-- Bell body -->
+  <path d="M256 128C256 128 320 144 320 240V304C320 304 336 320 352 336H160C176 320 192 304 192 304V240C192 144 256 128 256 128Z" 
+        fill="#FAF9F6" 
+        stroke="#8B7355" 
+        stroke-width="4"/>
+  
+  <!-- Bell rim -->
+  <ellipse cx="256" cy="336" rx="96" ry="16" 
+           fill="#FAF9F6" 
+           stroke="#8B7355" 
+           stroke-width="4"/>
+  
+  <!-- Bell clapper -->
+  <circle cx="256" cy="360" r="20" 
+          fill="#8B7355"/>
+  
+  <!-- Bell top knob -->
+  <circle cx="256" cy="128" r="12" 
+          fill="#8B7355"/>
+  
+  <!-- Decorative sound waves -->
+  <path d="M196 200 Q 176 200 176 220" 
+        stroke="#8B7355" 
+        stroke-width="3" 
+        fill="none" 
+        opacity="0.6"/>
+  <path d="M316 200 Q 336 200 336 220" 
+        stroke="#8B7355" 
+        stroke-width="3" 
+        fill="none" 
+        opacity="0.6"/>
+  
+  <!-- Mindfulness symbol (lotus-inspired) -->
+  <g transform="translate(256, 420)" opacity="0.8">
+    <path d="M -20 0 Q -20 -15 0 -20 Q 20 -15 20 0" 
+          fill="#FAF9F6" 
+          stroke="#8B7355" 
+          stroke-width="2"/>
+    <path d="M -15 0 Q -10 -10 0 -12 Q 10 -10 15 0" 
+          fill="#FAF9F6" 
+          stroke="#8B7355" 
+          stroke-width="2"/>
+    <circle cx="0" cy="0" r="4" fill="#8B7355"/>
+  </g>
+</svg>

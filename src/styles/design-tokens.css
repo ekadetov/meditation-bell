@@ -1,0 +1,230 @@
+/**
+ * Design Tokens
+ * 
+ * CSS custom properties for the Awakening Bell application.
+ * Implements a calming, mindfulness-focused design system inspired by
+ * Thich Nhat Hanh's teachings.
+ */
+
+:root {
+  /* ==================== Colors ==================== */
+  
+  /* Primary Colors - Deep Ocean Blue */
+  --color-primary: #2C5F7C;
+  --color-primary-light: #4A8FAF;
+  --color-primary-dark: #1A3A4D;
+  --color-primary-subtle: #E8F1F5;
+  
+  /* Secondary Colors - Soft Sage Green */
+  --color-secondary: #8BA888;
+  --color-secondary-light: #A8C4A5;
+  --color-secondary-dark: #6D8A6B;
+  --color-secondary-subtle: #F0F4F0;
+  
+  /* Accent Colors - Warm Amber */
+  --color-accent: #D4A574;
+  --color-accent-light: #E5C199;
+  --color-accent-dark: #B8895D;
+  --color-accent-subtle: #F8F2EB;
+  
+  /* Neutral Colors - Warm Grays */
+  --color-neutral-50: #FAF9F6;
+  --color-neutral-100: #F5F3EF;
+  --color-neutral-200: #E8E6E1;
+  --color-neutral-300: #D1CEC7;
+  --color-neutral-400: #A8A5A0;
+  --color-neutral-500: #7A7771;
+  --color-neutral-600: #5D5A54;
+  --color-neutral-700: #4A4A4A;
+  --color-neutral-800: #333333;
+  --color-neutral-900: #1F1F1F;
+  
+  /* Background Colors */
+  --color-bg-primary: #FAF9F6;
+  --color-bg-secondary: #F5F3EF;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-overlay: rgba(44, 95, 124, 0.95);
+  
+  /* Text Colors */
+  --color-text-primary: #333333;
+  --color-text-secondary: #5D5A54;
+  --color-text-tertiary: #7A7771;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #2C5F7C;
+  --color-text-link-hover: #1A3A4D;
+  
+  /* State Colors */
+  --color-success: #6D8A6B;
+  --color-success-light: #A8C4A5;
+  --color-error: #C86B5B;
+  --color-error-light: #E8A69A;
+  --color-warning: #D4A574;
+  --color-warning-light: #E5C199;
+  --color-info: #4A8FAF;
+  --color-info-light: #8FBFD9;
+  
+  /* Border Colors */
+  --color-border-light: #E8E6E1;
+  --color-border-medium: #D1CEC7;
+  --color-border-dark: #A8A5A0;
+  
+  /* Focus & Interaction */
+  --color-focus: #4A8FAF;
+  --color-focus-ring: rgba(74, 143, 175, 0.4);
+  
+  /* ==================== Typography ==================== */
+  
+  /* Font Families */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 3rem;       /* 48px */
+  --font-size-6xl: 4rem;       /* 64px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  
+  /* ==================== Spacing ==================== */
+  
+  /* Base unit: 4px */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  
+  /* ==================== Sizing ==================== */
+  
+  /* Container Max Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  
+  /* Touch Targets */
+  --touch-target-min: 44px;
+  --button-height: 44px;
+  --button-height-sm: 36px;
+  --button-height-lg: 52px;
+  
+  /* ==================== Border Radius ==================== */
+  
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-base: 0.5rem;  /* 8px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+  
+  /* ==================== Shadows ==================== */
+  
+  /* Soft, natural shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-base: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  
+  /* Focus shadow */
+  --shadow-focus: 0 0 0 3px var(--color-focus-ring);
+  
+  /* Inner shadow */
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  
+  /* ==================== Transitions ==================== */
+  
+  /* Durations - Slow and mindful */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-slow: 400ms;
+  --duration-slower: 500ms;
+  --duration-breath: 4000ms;
+  
+  /* Easing Functions */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-breath: cubic-bezier(0.37, 0, 0.63, 1);
+  
+  /* Common Transitions */
+  --transition-fast: all var(--duration-fast) var(--ease-out);
+  --transition-base: all var(--duration-base) var(--ease-in-out);
+  --transition-slow: all var(--duration-slow) var(--ease-smooth);
+  --transition-color: color var(--duration-base) var(--ease-out),
+                      background-color var(--duration-base) var(--ease-out),
+                      border-color var(--duration-base) var(--ease-out);
+  --transition-transform: transform var(--duration-base) var(--ease-smooth);
+  --transition-opacity: opacity var(--duration-base) var(--ease-out);
+  
+  /* ==================== Z-Index Scale ==================== */
+  
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  
+  /* ==================== Opacity Scale ==================== */
+  
+  --opacity-0: 0;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+}
+
+/* ==================== Dark Mode Support (Future) ==================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Override colors for dark mode if needed in future */
+    /* Currently optimized for light mode only */
+  }
+}

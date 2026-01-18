@@ -1,0 +1,552 @@
+/**
+ * Animations
+ * 
+ * Mindful, gentle animations for the Awakening Bell application.
+ * All animations respect prefers-reduced-motion.
+ */
+
+@import './design-tokens.css';
+
+/* ==================== Breathing Animation ==================== */
+
+/**
+ * Gentle breathing animation for meditation mode
+ * 4-second cycle: inhale → hold → exhale → hold
+ */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.breathing {
+  animation: breathe var(--duration-breath) var(--ease-breath) infinite;
+}
+
+/* Slower breathing for deep meditation */
+@keyframes breathe-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+.breathing-slow {
+  animation: breathe-slow 6000ms var(--ease-breath) infinite;
+}
+
+/* ==================== Bell Ring Animations ==================== */
+
+/**
+ * Ripple effect emanating from center when bell rings
+ */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--color-accent-light) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ripple.active::before {
+  animation: ripple 1500ms var(--ease-out) forwards;
+}
+
+/**
+ * Bell icon ring animation
+ */
+@keyframes ring {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30%, 50%, 70% {
+    transform: rotate(-10deg);
+  }
+  20%, 40%, 60%, 80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-5deg);
+  }
+}
+
+.ring {
+  animation: ring 1000ms var(--ease-in-out);
+}
+
+/* ==================== Fade Animations ==================== */
+
+/**
+ * Gentle fade in
+ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in var(--duration-slow) var(--ease-out);
+}
+
+.fade-in-fast {
+  animation: fade-in var(--duration-base) var(--ease-out);
+}
+
+.fade-in-slow {
+  animation: fade-in var(--duration-slower) var(--ease-out);
+}
+
+/**
+ * Gentle fade out
+ */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out var(--duration-slow) var(--ease-out);
+}
+
+/**
+ * Fade in with slight upward movement
+ */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up var(--duration-slow) var(--ease-out);
+}
+
+/**
+ * Fade in with slight downward movement
+ */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fade-in-down var(--duration-slow) var(--ease-out);
+}
+
+/* ==================== Progress Animations ==================== */
+
+/**
+ * Progress bar fill animation
+ */
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+  height: 8px;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: var(--radius-full);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+/**
+ * Indeterminate progress (loading)
+ */
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.progress-indeterminate {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+  height: 4px;
+}
+
+.progress-indeterminate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: progress-indeterminate 1500ms linear infinite;
+}
+
+/* ==================== Pulse Animation ==================== */
+
+/**
+ * Subtle pulse for active states
+ */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse {
+  animation: pulse 2000ms var(--ease-in-out) infinite;
+}
+
+/**
+ * Pulse with scale
+ */
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.pulse-scale {
+  animation: pulse-scale 2000ms var(--ease-in-out) infinite;
+}
+
+/* ==================== Button Interactions ==================== */
+
+/**
+ * Button hover scale
+ */
+.btn-scale-hover {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.btn-scale-hover:hover {
+  transform: scale(1.05);
+}
+
+.btn-scale-hover:active {
+  transform: scale(0.95);
+}
+
+/**
+ * Button press effect
+ */
+.btn-press {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.btn-press:active {
+  transform: translateY(2px);
+}
+
+/* ==================== Shake Animation ==================== */
+
+/**
+ * Error shake animation
+ */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+.shake {
+  animation: shake 400ms var(--ease-in-out);
+}
+
+/* ==================== Spin Animation ==================== */
+
+/**
+ * Loading spinner
+ */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1000ms linear infinite;
+}
+
+.spin-slow {
+  animation: spin 2000ms linear infinite;
+}
+
+/* ==================== Bounce Animation ==================== */
+
+/**
+ * Gentle bounce
+ */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.bounce {
+  animation: bounce 1000ms var(--ease-in-out);
+}
+
+/* ==================== Glow Animation ==================== */
+
+/**
+ * Soft glow effect for focus/active states
+ */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px var(--color-primary-light);
+  }
+  50% {
+    box-shadow: 0 0 16px var(--color-primary);
+  }
+}
+
+.glow {
+  animation: glow 2000ms var(--ease-in-out) infinite;
+}
+
+/* ==================== Slide Animations ==================== */
+
+/**
+ * Slide from left
+ */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left var(--duration-base) var(--ease-out);
+}
+
+/**
+ * Slide from right
+ */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right var(--duration-base) var(--ease-out);
+}
+
+/* ==================== Scale Animations ==================== */
+
+/**
+ * Scale in
+ */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in {
+  animation: scale-in var(--duration-base) var(--ease-out);
+}
+
+/**
+ * Scale in from center
+ */
+@keyframes scale-in-center {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in-center {
+  animation: scale-in-center var(--duration-slow) var(--ease-smooth);
+}
+
+/* ==================== Shimmer Effect ==================== */
+
+/**
+ * Shimmer for loading states
+ */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-200) 0%,
+    var(--color-neutral-100) 50%,
+    var(--color-neutral-200) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2000ms linear infinite;
+}
+
+/* ==================== Stagger Animation Delays ==================== */
+
+/**
+ * For staggering animations in lists
+ */
+.stagger-1 {
+  animation-delay: 100ms;
+}
+
+.stagger-2 {
+  animation-delay: 200ms;
+}
+
+.stagger-3 {
+  animation-delay: 300ms;
+}
+
+.stagger-4 {
+  animation-delay: 400ms;
+}
+
+.stagger-5 {
+  animation-delay: 500ms;
+}
+
+/* ==================== Reduced Motion ==================== */
+
+/**
+ * Respect user's motion preferences
+ * All animations become instant when prefers-reduced-motion is enabled
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .breathing,
+  .breathing-slow,
+  .pulse,
+  .pulse-scale,
+  .glow,
+  .shimmer,
+  .spin,
+  .spin-slow {
+    animation: none !important;
+  }
+  
+  .ripple.active::before {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
