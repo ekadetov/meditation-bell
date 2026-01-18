@@ -2,54 +2,54 @@
   "name": "Awakening Bell - Mindfulness Timer",
   "short_name": "Awakening Bell",
   "description": "AI-enhanced meditation timer inspired by Thich Nhat Hanh's teachings. Practice mindfulness with periodic bell reminders, mood tracking, and personalized insights.",
-  "start_url": "/",
+  "start_url": "/meditation-bell/",
   "display": "standalone",
   "background_color": "#FAF9F6",
   "theme_color": "#2C5F7C",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "/meditation-bell/",
   "categories": ["health", "lifestyle", "productivity", "meditation", "wellness"],
   "lang": "en",
   "dir": "ltr",
   "icons": [
     {
-      "src": "/icons/icon-72.png",
+      "src": "./icons/icon-72.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-96.png",
+      "src": "./icons/icon-96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-128.png",
+      "src": "./icons/icon-128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-192.png",
+      "src": "./icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-192-maskable.png",
+      "src": "./icons/icon-192-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "./icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512-maskable.png",
+      "src": "./icons/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -57,14 +57,14 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/meditation-timer.png",
+      "src": "./screenshots/meditation-timer.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Meditation timer interface"
     },
     {
-      "src": "/screenshots/stats-insights.png",
+      "src": "./screenshots/stats-insights.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow",
@@ -76,10 +76,10 @@
       "name": "Start Meditation",
       "short_name": "Meditate",
       "description": "Start a new meditation session",
-      "url": "/?action=start",
+      "url": "./?action=start",
       "icons": [
         {
-          "src": "/icons/icon-96.png",
+          "src": "./icons/icon-96.png",
           "sizes": "96x96",
           "type": "image/png"
         }
@@ -89,10 +89,10 @@
       "name": "View Stats",
       "short_name": "Stats",
       "description": "View meditation statistics",
-      "url": "/?tab=stats",
+      "url": "./?tab=stats",
       "icons": [
         {
-          "src": "/icons/icon-96.png",
+          "src": "./icons/icon-96.png",
           "sizes": "96x96",
           "type": "image/png"
         }
@@ -100,7 +100,7 @@
     }
   ],
   "share_target": {
-    "action": "/share",
+    "action": "./share",
     "method": "GET",
     "params": {
       "title": "title",
