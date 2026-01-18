@@ -8,12 +8,12 @@ const RUNTIME_CACHE = 'awakening-bell-runtime-v1';
 
 // Assets to precache on installation
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon.svg',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  './',
+  './index.html',
+  './manifest.json',
+  './icons/icon.svg',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
 // Install event - precache static assets
@@ -73,7 +73,7 @@ self.addEventListener('fetch', (event) => {
           // If network fails, try cache
           return caches.match(request)
             .then((cachedResponse) => {
-              return cachedResponse || caches.match('/index.html');
+              return cachedResponse || caches.match('./index.html');
             });
         })
     );
@@ -154,8 +154,8 @@ self.addEventListener('sync', (event) => {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data ? event.data.text() : 'Time for mindfulness',
-    icon: '/icons/icon-192.png',
-    badge: '/icons/icon-96.png',
+    icon: './icons/icon-192.png',
+    badge: './icons/icon-96.png',
     vibrate: [200, 100, 200],
     tag: 'meditation-reminder',
     requireInteraction: false
